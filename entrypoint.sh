@@ -15,6 +15,7 @@ for FILE in $FILES; do
     proselint "$FILE"
     write-good "$FILE"
     echo "Done"
+    echo "Done2"
     $INPUT_TOOL $FILE >> $LINT_LOG
 done
 
