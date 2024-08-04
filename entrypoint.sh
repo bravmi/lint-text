@@ -15,8 +15,8 @@ FILES=$(find . -name "*.md")
 for FILE in $FILES; do
     echo "Running $TOOL on $FILE"
     if [ "$TOOL" = "write-good" ]; then
-        write-good "$FILE"
+        write-good "$FILE" >> $GITHUB_OUTPUT
     else
-        proselint "$FILE"
+        proselint "$FILE" >> $GITHUB_OUTPUT
     fi
 done

@@ -5,6 +5,9 @@ inputs:
     description: 'The tool to use for linting. Must be either write-good or proselint.'
     required: true
     default: 'write-good'
+outputs:
+  result: # id of output
+    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
