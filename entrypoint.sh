@@ -4,8 +4,8 @@
 TOOL=${INPUT_TOOL}
 IGNORE_PATHS=${INPUT_IGNORE_PATHS}
 
-echo "Using tool: $TOOL"
-echo "Ignore paths: $IGNORE_PATHS"
+echo "Using tool: $TOOL $INPUT_TOOL"
+echo "Ignore paths: $IGNORE_PATHS $INPUT_IGNORE_PATHS"
 
 LINT_LOG=lint.log
 
