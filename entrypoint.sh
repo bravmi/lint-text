@@ -13,6 +13,8 @@ echo $FILES
 for FILE in $FILES; do
     echo "Running $TOOL on $FILE"
     proselint "$FILE"
+    proselint "$FILE"
+    echo "Done"
     if [ "$TOOL" = "write-good" ]; then
         write-good "$FILE" >> $LINT_LOG
     else
