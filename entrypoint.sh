@@ -9,16 +9,6 @@ fi
 
 # Find all markdown files and run the selected tool on them
 FILES=$(find . -name "*.md" -not -path $INPUT_IGNORE_PATHS)
-echo $FILES
-for FILE in $FILES; do
-    echo "Running $INPUT_TOOL on $FILE"
-    cat $FILE
-    proselint $FILE
-    write-good $FILE
-    echo "Done"
-    echo "Done2"
-    $INPUT_TOOL $FILE >> $LINT_LOG
-done
-
+$INPUT_TOOL $FILES >> $LINT_LOG
 cat $LINT_LOG
 cat ./README.md
