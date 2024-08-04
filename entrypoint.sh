@@ -21,3 +21,4 @@ for FILE in $FILES; do
 done
 
 cat $LINT_LOG
+cat ./README.md
