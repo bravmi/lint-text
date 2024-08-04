@@ -13,8 +13,8 @@ echo $FILES
 for FILE in $FILES; do
     echo "Running $INPUT_TOOL on $FILE"
     cat $FILE
-    proselint "$FILE"
-    write-good "$FILE"
+    proselint $FILE
+    write-good $FILE
     echo "Done"
     echo "Done2"
     $INPUT_TOOL $FILE >> $LINT_LOG
