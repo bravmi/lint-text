@@ -12,6 +12,7 @@ FILES=$(find . -name "*.md" -not -path $INPUT_IGNORE_PATHS)
 echo $FILES
 for FILE in $FILES; do
     echo "Running $INPUT_TOOL on $FILE"
+    cat $FILE
     proselint "$FILE"
     write-good "$FILE"
     echo "Done"
