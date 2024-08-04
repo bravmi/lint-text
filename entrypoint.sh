@@ -11,15 +11,11 @@ fi
 FILES=$(find . -name "*.md" -not -path $INPUT_IGNORE_PATHS)
 echo $FILES
 for FILE in $FILES; do
-    echo "Running $TOOL on $FILE"
+    echo "Running $INPUT_TOOL on $FILE"
     proselint "$FILE"
     proselint "$FILE"
     echo "Done"
-    if [ "$TOOL" = "write-good" ]; then
-        write-good "$FILE" >> $LINT_LOG
-    else
-        proselint "$FILE" >> $LINT_LOG
-    fi
+    $INPUT_TOOL $FILE >> $LINT_LOG
 done
 
 cat $LINT_LOG
