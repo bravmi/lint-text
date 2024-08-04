@@ -15,8 +15,6 @@ outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  args:
-    - ${{ inputs.tool }}
   env:
     INPUT_TOOL: ${{ inputs.tool }}
     INPUT_IGNORE_PATHS: ${{ inputs.ignore_paths }}
