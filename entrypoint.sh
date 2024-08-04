@@ -8,7 +8,7 @@ if [ -z $INPUT_TOOL ]; then
 fi
 
 # Find all markdown files and run the selected tool on them
-FILES=$(find . -name "*.md")
+FILES=$(find . -name "*.md" -not -path $INPUT_IGNORE_PATH)
 echo $FILES
 for FILE in $FILES; do
     echo "Running $TOOL on $FILE"
