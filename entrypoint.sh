@@ -1,5 +1,7 @@
 #!/bin/sh -l
 
+$LINT_LOG=lint.log
+
 # Check for write-good or proselint argument
 if [ "$1" = "write-good" ]; then
     TOOL="write-good"
@@ -15,8 +17,8 @@ FILES=$(find . -name "*.md")
 for FILE in $FILES; do
     echo "Running $TOOL on $FILE"
     if [ "$TOOL" = "write-good" ]; then
-        write-good "$FILE" >> $GITHUB_OUTPUT
+        write-good "$FILE" >> $LINT_LOG
     else
-        proselint "$FILE" >> $GITHUB_OUTPUT
+        proselint "$FILE" >> $LINT_LOG
     fi
 done
