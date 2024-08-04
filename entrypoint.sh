@@ -1,5 +1,12 @@
 #!/bin/sh -l
 
+# Access the environment variables
+TOOL=${INPUT_TOOL}
+IGNORE_PATHS=${INPUT_IGNORE_PATHS}
+
+echo "Using tool: $TOOL"
+echo "Ignore paths: $IGNORE_PATHS"
+
 LINT_LOG=lint.log
 
 if [ -z $INPUT_TOOL ]; then
