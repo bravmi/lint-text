@@ -5,6 +5,10 @@ inputs:
     description: 'The tool to use for linting. Must be either write-good or proselint.'
     required: true
     default: 'write-good'
+  ignore_paths:
+    description: 'Paths to ignore when linting.'
+    required: false
+    default: ''
 outputs:
   result: # id of output
     description: 'The time we greeted you'
@@ -13,3 +17,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.tool }}
+  env:
+    INPUT_TOOL: ${{ inputs.tool }}
+    INPUT_IGNORE_PATHS: ${{ inputs.ignore_paths }}

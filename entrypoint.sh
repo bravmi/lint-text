@@ -2,12 +2,7 @@
 
 LINT_LOG=lint.log
 
-# Check for write-good or proselint argument
-if [ "$1" = "write-good" ]; then
-    TOOL="write-good"
-elif [ "$1" = "proselint" ]; then
-    TOOL="proselint"
-else
+if [ -z $INPUT_TOOL ]; then
     echo "You must specify either 'write-good' or 'proselint' as the first argument."
     exit 1
 fi
