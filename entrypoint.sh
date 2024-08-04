@@ -7,6 +7,4 @@ fi
 
 # Find all markdown files and run the selected tool on them
 files=$(find . -name "*.md" -not -path $INPUT_IGNORE_PATHS)
-result=$($INPUT_TOOL $files)
-printf "result = $result\n"
-echo "result=$result" >> $GITHUB_OUTPUT
+$INPUT_TOOL $files
