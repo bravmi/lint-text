@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-$LINT_LOG=lint.log
+LINT_LOG=lint.log
 
 # Check for write-good or proselint argument
 if [ "$1" = "write-good" ]; then
