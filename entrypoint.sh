@@ -14,11 +14,15 @@ fi
 
 # Find all markdown files and run the selected tool on them
 FILES=$(find . -name "*.md")
+echo $FILES
 for FILE in $FILES; do
     echo "Running $TOOL on $FILE"
+    proselint "$FILE"
     if [ "$TOOL" = "write-good" ]; then
         write-good "$FILE" >> $LINT_LOG
     else
         proselint "$FILE" >> $LINT_LOG
     fi
 done
+
+cat $LINT_LOG
