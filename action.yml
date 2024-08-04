@@ -1,16 +1,12 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Markdown Linter'
+description: 'Runs write-good or proselint on all .md files in the repository.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  tool:
+    description: 'The tool to use for linting. Must be either write-good or proselint.'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: 'write-good'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.tool }}

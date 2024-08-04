@@ -1,8 +1,14 @@
-# Container image that runs your code
-FROM alpine:3.10
+FROM node:14-alpine
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+# Install write-good
+RUN npm install -g write-good
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
+# Install proselint
+RUN apk add --no-cache py3-pip
+RUN pip install proselint
+
+# Add entrypoint script
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
