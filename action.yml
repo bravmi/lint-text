@@ -13,9 +13,9 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.tool }}
-  steps:
-    - name: Upload lint log
-      uses: actions/upload-artifact@v2
-      with:
-        name: lint-log
-        path: lint.log
+steps:
+  - name: Upload lint log
+    uses: actions/upload-artifact@v2
+    with:
+      name: lint-log
+      path: lint.log
